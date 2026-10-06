@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso Walker CRM - Terminal e Node.js</title>  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      background: #111827;
+      padding: 30px 20px;
+      border-bottom: 1px solid #263244;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #22c55e;
+      font-size: 28px;
+    }
+
+    header p {
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .aula {
+      background: #111827;
+      border: 1px solid #263244;
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+
+    .aula h2 {
+      margin-top: 0;
+      color: #22c55e;
+    }
+
+    .aula p {
+      color: #cbd5e1;
+    }
+
+    .codigo {
+      position: relative;
+      background: #020617;
+      border-radius: 8px;
+      padding: 18px;
+      margin-top: 15px;
+      border: 1px solid #334155;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      color: #f8fafc;
+      padding-right: 80px;
+    }
+
+    button {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #22c55e;
+      color: #052e16;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4ade80;
+    }
+
+    .resultado {
+      background: #020617;
+      border: 1px solid #334155;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: monospace;
+      line-height: 1.7;
+    }
+
+    .verde {
+      color: #22c55e;
+    }
+  </style></head><body><header>
+  <h1>Walker CRM</h1>
+  <p>Curso prático — Terminal + Node.js</p>
+</header><main>  <section class="aula">
+    <h2>Passo 1 — Criar o projeto</h2>
+    <p>Crie a pasta principal do Walker CRM e entre nela.</p><div class="codigo">
+  <button onclick="copiar(this)">Copiar</button>
+  <pre>mkdir walker-crm
+
+cd walker-crm</pre>
+</div>
+
+  </section>  <section class="aula">
+    <h2>Passo 2 — Criar a pasta public</h2>
+    <p>A pasta public vai guardar os arquivos da parte visual do CRM.</p><div class="codigo">
+  <button onclick="copiar(this)">Copiar</button>
+  <pre>mkdir public
+
+cd public</pre>
+</div>
+
+  </section>  <section class="aula">
+    <h2>Passo 3 — Criar os arquivos do site</h2>
+    <p>Aqui vamos criar HTML, CSS e JavaScript.</p><div class="codigo">
+  <button onclick="copiar(this)">Copiar</button>
+  <pre>touch index.html
+
+touch style.css
+touch app.js</pre>
+</div>
+
+  </section>  <section class="aula">
+    <h2>Passo 4 — Voltar para a pasta principal</h2>
+    <p>Voltamos da pasta public para walker-crm.</p><div class="codigo">
+  <button onclick="copiar(this)">Copiar</button>
+  <pre>cd ..</pre>
+</div>
+
+  </section>  <section class="aula">
+    <h2>Passo 5 — Criar os arquivos do servidor</h2>
+    <p>Vamos criar o servidor Node.js e o arquivo que futuramente poderá guardar nossos dados.</p><div class="codigo">
+  <button onclick="copiar(this)">Copiar</button>
+  <pre>touch server.js
+
+touch banco.json</pre>
+</div>
+
+  </section>  <section class="aula">
+    <h2>Passo 6 — Preparar o Node.js</h2>
+    <p>Este comando cria o package.json do projeto.</p><div class="codigo">
+  <button onclick="copiar(this)">Copiar</button>
+  <pre>npm init -y</pre>
+</div>
+
+  </section>  <section class="aula">
+    <h2>Passo 7 — Instalar o Express</h2>
+    <p>O Express será usado para criar o servidor e as APIs do Walker CRM.</p><div class="codigo">
+  <button onclick="copiar(this)">Copiar</button>
+  <pre>npm install express</pre>
+</div>
+
+  </section>  <section class="aula">
+    <h2>Resultado esperado</h2><div class="resultado">
+  walker-crm/<br>
+  ├── server.js<br>
+  ├── package.json<br>
+  ├── banco.json<br>
+  ├── package-lock.json<br>
+  ├── node_modules/<br>
+  └── public/<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;├── index.html<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;├── style.css<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;└── app.js
+</div>
+
+  </section>  <section class="aula">
+    <h2>Próxima aula</h2>
+    <p class="verde">
+      Criar o primeiro servidor Node.js com o arquivo server.js.
+    </p>
+  </section></main><script>
+  function copiar(botao) {
+    const codigo = botao.parentElement.querySelector("pre").innerText;
+
+    navigator.clipboard.writeText(codigo).then(() => {
+      const textoOriginal = botao.innerText;
+      botao.innerText = "Copiado!";
+
+      setTimeout(() => {
+        botao.innerText = textoOriginal;
+      }, 1500);
+    });
+  }
+</script></body>
+</html>
